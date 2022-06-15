@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nạp coin vào tài khoản</title>
+    <base href="./">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../styles.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/charge.css" />
+</head>
+<body>
+  <div id="mainContent">
+      <div class="card">
+          <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs">
+                  <li class="nav-item">
+                      <a class="nav-link active" href="#" data-target="cardChargeContent"><img src="../assets/images/mobilecard.png" /> Thẻ cào</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#" data-target="momoChargeContent"><img src="../assets/images/momo.png" /> Momo</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#" data-target="bankChargeContent"><img src="../assets/images/tpbank.png" /> Bank</a>
+                  </li>
+              </ul>
+          </div>
+          <div class="card-body" id="cardChargeContent">
+              <h5 class="card-title text-danger mb-3">Tỉ lệ quy đổi: 10.000VNĐ = 2.500 coin</h5>
+              <h6 class="mb-2">Loại thẻ:</h6>
+              <div class="cardImages">
+                  <div class="cardImage active" data-target="viettel">
+                    <img src="../assets/images/viettel.png"><br>
+                      Thẻ Viettel
+                  </div>
+                  <div class="cardImage" data-target="vinaphone">
+                      <img src="../assets/images/vinaphone.png"><br>
+                      Thẻ Vinaphone
+                  </div>
+                  <div class="cardImage" data-target="mobifone">
+                      <img src="../assets/images/mobifone.png"><br>
+                      Thẻ Mobifone
+                  </div>
+                  <div class="cardImage" data-target="vcoin">
+                      <img src="../assets/images/vcoin.png"><br>
+                      Thẻ Vcoin
+                  </div>
+                  <div class="cardImage" data-target="gate">
+                      <img src="../assets/images/gate.png"><br>
+                      Thẻ Gate
+                  </div>
+                  <div class="cardImage" data-target="zing">
+                      <img src="../assets/images/zing.png"><br>
+                      Thẻ Zing
+                  </div>
+              </div>
+              <div class="row mt-3 mb-2 align-items-center">
+                  <label class="col-xs-2 col-md-2" for="amount">Mệnh giá:</label>
+                  <div class="col-sm-4 col-md-4">
+                      <select class="form-select form-select-lg" id="amount">
+                          <option value="10000" selected>10.000 VNĐ</option>
+                          <option value="20000">20.000 VNĐ</option>
+                          <option value="50000">50.000 VNĐ</option>
+                          <option value="100000">100.000 VNĐ</option>
+                          <option value="200000">200.000 VNĐ</option>
+                          <option value="500000">500.000 VNĐ</option>
+                          <option value="1000000">1.000.000 VNĐ</option>
+                      </select>
+                  </div>
+                  <div class="col-sm-6 col-md-6">Bạn sẽ nhận được <span id="resultCoin" class="text-danger">2500</span> coin</div>
+              </div>
+              <div class="row mb-2 align-items-center">
+                  <label class="col-xs-2 col-md-2" for="passcard">Mã thẻ:</label>
+                  <div class="col-sm-4 col-md-4">
+                      <input class="form-control form-control-lg" type="text" id="passcard" />
+                  </div>
+                  <label class="col-xs-2 col-md-2" for="seri">Seri thẻ:</label>
+                  <div class="col-sm-4 col-md-4">
+                      <input class="form-control form-control-lg" type="text" id="seri" />
+                  </div>
+              </div>
+              <p class="text-danger">* Tất cả thông tin là bắt buộc, chú ý chọn đúng thông tin thẻ, chúng tôi không chịu trách nhiệm nếu bạn chọn sai!</p>
+              <button type="button" class="btn btn-primary" id="chargeCardSubmitter">Nạp thẻ</button>
+          </div>
+          <div class="card-body d-none" id="momoChargeContent">
+              <h5 class="card-title text-danger mb-3">Tỉ lệ quy đổi: 10.000VNĐ = 3.000 coin</h5>
+              <h6 class="mb-2">Quét mã dưới đây và tiến hành chuyển tiền vào tài khoản MOMO được chỉ định:</h6>
+              <div class="momoAccount text-center">
+                  <img src="../assets/images/momoAccount.png" />
+              </div>
+              <div class="row mb-2 align-items-center">
+                  <label class="col-xs-2 col-md-2" for="momoTransactionId">Mã giao dịch:</label>
+                  <div class="col-sm-4 col-md-4">
+                      <input class="form-control form-control-lg" type="text" id="momoTransactionId" />
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                      &nbsp;
+                  </div>
+              </div>
+              <button type="button" class="btn btn-primary" id="chargeMomoSubmitter">Gửi thông tin</button>
+          </div>
+          <div class="card-body d-none" id="bankChargeContent">
+              <h5 class="card-title text-danger mb-3">Tỉ lệ quy đổi: 10.000VNĐ = 3.000 coin</h5>
+              <h6 class="mb-2">Chuyển khoản vào số tài khoản dưới đây:</h6>
+              <div class="bankAccount">
+                  <img src="../assets/images/bankAccount.png" />
+              </div>
+              <div class="row mb-2 align-items-center">
+                  <label class="col-xs-2 col-md-2" for="bankTransactionId">Mã giao dịch:</label>
+                  <div class="col-sm-4 col-md-4">
+                      <input class="form-control form-control-lg" type="text" id="bankTransactionId" />
+                  </div>
+                  <div class="col-sm-6 col-md-6">
+                      &nbsp;
+                  </div>
+              </div>
+              <button type="button" class="btn btn-primary" id="bankMomoSubmitter">Gửi thông tin</button>
+          </div>
+      </div>
+  </div>
+</body>
+</html>

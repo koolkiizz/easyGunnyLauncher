@@ -1,0 +1,66 @@
+{
+  "name": "EasyGunnyLauncher",
+  "productName": "EasyGunny Team",
+  "description": "Launcher for EasyGunny's Player Games",
+  "homepage": "https://easygun.vn",
+  "author": "The Seven (koolkiizz)",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "publish": "electron-builder --win -p always",
+    "build": "electron-builder --win",
+    "build1": "electron-packager . EasyGunLauncher --platform=darwin --overwrite --icon=icon.icns",
+    "build2": "electron-packager . EasyGunLauncher --platform=win32 --overwrite --icon=icon.ico",
+    "build3": "electron-packager . EasyGunLauncher --all --overwrite --icon=icon.ico",
+    "build4": "electron-packager . EasyGunLauncher --all --overwrite --icon=icon.ico",
+    "buildWin32": "electron-packager . EasyGunLauncher --platform=win32 --arch=ia32 --overwrite --icon=icon.ico --production --prune -p always",
+    "buildWin64": "electron-packager . EasyGunLauncher --platform=win32 --overwrite --icon=icon.ico -p always --prune-license nm-prune --force",
+    "debug": "electron-forge start --inspect-electron"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^9.0.5",
+    "electron-builder": "^22.9.1",
+    "electron-packager": "^15.4.0"
+  },
+  "dependencies": {
+    "@cliqz/adblocker-electron": "^1.23.0",
+    "cross-fetch": "^3.1.4",
+    "electron-context-menu": "^3.1.2",
+    "electron-find": "^1.0.7",
+    "electron-forge": "^5.2.4",
+    "electron-navigation": "^6.6.6",
+    "electron-updater": "^4.3.5",
+    "electron-version": "^2.0.1",
+    "resolve-dependencies": "^6.0.7",
+    "update-electron-app": "^2.0.1"
+  },
+  "build": {
+    "appId": "easygun.launcher",
+    "directories": {
+      "buildResources": "resources",
+      "flashver": "flashver",
+      "output": "release"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico",
+      "uninstallDisplayName": "EasyGun Launhcer",
+      "oneClick": true,
+      "perMachine": false,
+      "artifactName": "EasyGunLauncher.${ext}"
+    }
+  }
+}
